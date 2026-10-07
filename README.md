@@ -12,13 +12,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ShugokiFable/Cuda-Spirit/actions/workflows/windows-release.yml"><img src="https://github.com/ShugokiFable/Cuda-Spirit/actions/workflows/windows-release.yml/badge.svg" alt="Windows Release Build"></a>
+  <a href="https://github.com/SenjuWoo/Cuda-Spirit/actions/workflows/windows-release.yml"><img src="https://github.com/SenjuWoo/Cuda-Spirit/actions/workflows/windows-release.yml/badge.svg" alt="Windows Release Build"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-e07030?labelColor=14081f" alt="MIT License"></a>
-  <a href="https://github.com/ShugokiFable/Cuda-Spirit/releases/tag/v2.4.2"><img src="https://img.shields.io/badge/release-v2.4.2-f4c45a?labelColor=14081f" alt="v2.4.2"></a>
+  <a href="https://github.com/SenjuWoo/Cuda-Spirit/releases/tag/v2.4.2"><img src="https://img.shields.io/badge/release-v2.4.2-f4c45a?labelColor=14081f" alt="v2.4.2"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/ShugokiFable/Cuda-Spirit/releases/latest">Download</a>
+  <a href="https://github.com/SenjuWoo/Cuda-Spirit/releases/latest">Download</a>
   ·
   <a href="#quick-start">Quick start</a>
   ·
@@ -29,7 +29,7 @@
 
 ## Quick start
 
-Latest release: **[v2.4.2](https://github.com/ShugokiFable/Cuda-Spirit/releases/tag/v2.4.2)** (`Cuda-Spirit-2.4.2-Nexus.zip`).
+Latest release: **[v2.4.2](https://github.com/SenjuWoo/Cuda-Spirit/releases/tag/v2.4.2)** (`Cuda-Spirit-2.4.2-Nexus.zip`).
 
 People downloading that compiled Nexus zip need neither a .NET runtime nor an SDK. Extract it and run `CudaSpirit.exe`.
 

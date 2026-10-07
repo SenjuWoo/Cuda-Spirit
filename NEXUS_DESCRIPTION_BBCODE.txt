@@ -86,7 +86,7 @@ Delete the extract folder / [code]CudaSpirit.exe[/code]. Remove [code]%APPDATA%\
 
 [heading]Source[/heading]
 Open source tree and verified Windows build workflow:
-[url]https://github.com/ShugokiFable/Cuda-Spirit[/url]
+[url]https://github.com/SenjuWoo/Cuda-Spirit[/url]
 
 
 [heading]Shout outs[/heading]
