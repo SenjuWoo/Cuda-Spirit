@@ -14,7 +14,7 @@
 <p align="center">
   <a href="https://github.com/SenjuWoo/Cuda-Spirit/actions/workflows/windows-release.yml"><img src="https://github.com/SenjuWoo/Cuda-Spirit/actions/workflows/windows-release.yml/badge.svg" alt="Windows Release Build"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-e07030?labelColor=14081f" alt="MIT License"></a>
-  <a href="https://github.com/SenjuWoo/Cuda-Spirit/releases/tag/v2.4.2"><img src="https://img.shields.io/badge/release-v2.4.2-f4c45a?labelColor=14081f" alt="v2.4.2"></a>
+  <a href="https://github.com/SenjuWoo/Cuda-Spirit/releases/latest"><img src="https://img.shields.io/github/v/release/SenjuWoo/Cuda-Spirit?label=release&color=f4c45a" alt="latest release"></a>
 </p>
 
 <p align="center">
