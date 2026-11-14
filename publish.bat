@@ -14,7 +14,7 @@ set "EXE_NAME=CudaSpirit.exe"
 set "EXE_PATH=%PUBLISH_DIR%\%EXE_NAME%"
 set "RID=win-x64"
 set "CONFIG=Release"
-set "MIN_SDK_MAJOR=8"
+set "MIN_SDK_MAJOR=10"
 
 set "DOTNET_CLI_TELEMETRY_OPTOUT=1"
 set "DOTNET_NOLOGO=1"
@@ -26,7 +26,7 @@ echo ============================================================
 
 where dotnet >nul 2>&1
 if errorlevel 1 (
-  echo [ERROR] A stable .NET 8 or newer SDK is not on PATH.
+  echo [ERROR] A stable .NET 10 or newer SDK is not on PATH.
   goto :fail
 )
 for /f "usebackq delims=" %%V in (`dotnet --version 2^>nul`) do set "FOUND_SDK=%%V"
@@ -36,7 +36,7 @@ if not defined SDK_MAJOR (
   goto :fail
 )
 if !SDK_MAJOR! LSS %MIN_SDK_MAJOR% (
-  echo [ERROR] .NET SDK 8 or newer is required; found !FOUND_SDK!.
+  echo [ERROR] .NET SDK 10 or newer is required; found !FOUND_SDK!.
   goto :fail
 )
 echo       Using installed SDK !FOUND_SDK!.

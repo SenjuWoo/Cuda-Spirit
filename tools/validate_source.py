@@ -184,8 +184,8 @@ notes.append('Checked layered-overlay vector icons, DPI rounding, grayscale rend
 
 global_json = json.loads((ROOT / 'global.json').read_text(encoding='utf-8'))
 sdk = global_json.get('sdk', {})
-if sdk.get('version') != '8.0.100' or sdk.get('rollForward') != 'latestMajor':
-    errors.append('SDK compatibility regression: global.json must allow compatible installed .NET 8+ SDKs.')
+if sdk.get('version') != '10.0.100' or sdk.get('rollForward') != 'latestMajor':
+    errors.append('SDK compatibility regression: global.json must allow compatible installed .NET 10+ SDKs.')
 release_builder = ROOT / 'tools/Build-NexusRelease.ps1'
 if not release_builder.exists() or 'End users need no .NET runtime or SDK.' not in release_builder.read_text(encoding='utf-8'):
     errors.append('Self-contained Nexus release builder is missing or incomplete.')

@@ -1,3 +1,12 @@
+# Unreleased
+
+## .NET 10
+
+- Retargeted to .NET 10 LTS; .NET 8 support ended on 2026-11-10. Releases stay self-contained, so nothing new is installed by users. The SDK pin moves to 10.0.100 (`global.json`, roll-forward kept) and the release workflow builds with 10.0.404.
+- System.Drawing.Common 11.0.0, which needs .NET 10.
+- The OpenRouter stream reader ends on `ReadLineAsync` returning null instead of polling `EndOfStream`, which can block on a network stream (CA2024).
+- Verified: source validation, `dotnet build -warnaserror`, single-file self-contained publish and the launch smoke test (main window shown).
+
 # Cuda Spirit 2.4.2
 
 ## Real data layer: the companion now knows the game
