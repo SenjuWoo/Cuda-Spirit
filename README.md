@@ -83,7 +83,7 @@ Not claimed:
 
 ## Build from source
 
-Windows 10 or 11 x64. Microsoft Edge WebView2 for rendered official-page fallback. `.NET 8` SDK (`global.json` rolls forward; the Windows release workflow uses 8.0.423).
+Windows 10 or 11 x64. Microsoft Edge WebView2 for rendered official-page fallback. `.NET 10` SDK (`global.json` rolls forward; the Windows release workflow uses 10.0.404).
 
 ```text
 publish.bat

@@ -76,10 +76,9 @@ public sealed class OpenRouterClient
         await using var stream = await resp.Content.ReadAsStreamAsync(ct);
         using var reader = new StreamReader(stream);
 
-        while (!reader.EndOfStream)
+        // ReadLineAsync returns null at the end; EndOfStream would block on a network stream (CA2024).
+        while (await reader.ReadLineAsync(ct) is { } line)
         {
-            var line = await reader.ReadLineAsync(ct);
-            if (line is null) break;
             if (line.Length == 0 || !line.StartsWith("data:", StringComparison.Ordinal))
                 continue;
 

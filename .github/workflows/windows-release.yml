@@ -29,10 +29,10 @@ jobs:
             Get-ChildItem -Force | Where-Object { $_.Name -notin @('work', '.git') } | Copy-Item -Destination work -Recurse -Force
           }
 
-      - name: Setup .NET 8.0.423
+      - name: Setup .NET 10.0.404
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 8.0.423
+          dotnet-version: 10.0.404
 
       - name: Validate source structure
         shell: pwsh
