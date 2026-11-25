@@ -103,14 +103,11 @@ Pearl Abyss.
 
 ```mermaid
 flowchart LR
-  PUB["Public pages and APIs: patch notes, events,
-  Pearl notices, market, profiles"] -->|"each source fails independently"| DB[("local SQLite + FTS")]
-  CAT["bundled grind catalog
-  (version-gated seed)"] --> DB
+  PUB["Public pages and APIs: patch notes, events,<br/>Pearl notices, market, profiles"] -->|"each source fails independently"| DB[("local SQLite + FTS")]
+  CAT["bundled grind catalog<br/>(version-gated seed)"] --> DB
   IMP["your JSON imports"] --> DB
   YOU["Customize profile, tasks, decisions"] --> DB
-  DB --> ENG["deterministic engines: Navigator,
-  Pearl Guard, Item Intel, routes, brackets"]
+  DB --> ENG["deterministic engines: Navigator,<br/>Pearl Guard, Item Intel, routes, brackets"]
   DB --> AI["AI Advisor (optional OpenRouter key)"]
   ENG --> UI["cockpit, HUD and advisor overlay"]
   AI --> UI

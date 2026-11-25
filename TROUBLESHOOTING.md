@@ -1,12 +1,17 @@
 # Troubleshooting
 
-## First-run build fails
+## The release zip will not start
 
-- Keep the full extracted folder together.
-- Confirm Windows can reach `dot.net`, NuGet, and Microsoft download services.
+- Keep the extracted files together and run `CudaSpirit.exe` from a folder outside Program Files.
+- Unblock the zip (file Properties, Unblock) before extracting if Windows SmartScreen stops it.
+- The exe is self-contained; no .NET runtime is needed.
+
+## Building from source fails
+
+- Install any stable .NET 10 or newer SDK; `publish.bat` and `BUILD_NEXUS_RELEASE.bat` refuse older SDKs with a message.
+- Confirm Windows can reach NuGet for the package restore.
 - Temporarily allow PowerShell and `dotnet.exe` through security software.
-- Read `logs\install.log`.
-- Run `REBUILD_CUDA_SPIRIT.bat` after correcting the error.
+- Run `python tools/validate_source.py` on a clean tree; it names the file and rule that failed.
 
 ## The app opens but rendered official pages fail
 
