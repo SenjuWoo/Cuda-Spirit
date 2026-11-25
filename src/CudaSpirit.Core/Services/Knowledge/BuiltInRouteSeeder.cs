@@ -85,8 +85,8 @@ public sealed class BuiltInRouteSeeder
 
     private static string ReadCatalog()
     {
-        // Embedded resource ships inside the exe; a loose file next to it (or in the repo layout)
-        // wins so the catalog can be updated without recompiling.
+        // The embedded resource ships inside the exe and is used whenever it is present; the loose
+        // files below are only a fallback for a build without the resource.
         var asm = typeof(BuiltInRouteSeeder).Assembly;
         var resName = asm.GetManifestResourceNames()
             .FirstOrDefault(n => n.EndsWith("bdo-grind-catalog.json", StringComparison.OrdinalIgnoreCase));
