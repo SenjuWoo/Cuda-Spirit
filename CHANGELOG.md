@@ -8,6 +8,7 @@
 - `BUILD_NEXUS_RELEASE.bat` accepted .NET 8 and 9 SDKs (which cannot build a .NET 10 project) and rejected .NET 11; it now takes any .NET 10 or newer SDK, matching `global.json`.
 - Build and Nexus docs no longer describe the retired .NET 8 bootstrapper; `REPOSITORY_SETUP.md` names the MIT licence the repo already carries.
 - Microsoft.Data.Sqlite 11.0.0.
+- README rebuilt around real screenshots of the app and real validator / smoke-test runs (`docs/presentation/`); `SOURCE_MANIFEST.sha256` and `CHECKSUMS.sha256` regenerated for this tree (they still described the 2.4.1 drop).
 
 ## .NET 10
 
