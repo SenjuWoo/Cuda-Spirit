@@ -26,7 +26,7 @@ public partial class BossesView : UserControl, IRefreshable
         BossList.ItemsSource = _hub.Bosses.GetUpcoming(12).Select(b => new
         {
             b.Name,
-            Sub = $"{b.Kind} boss · {b.Notes}",
+            Sub = string.IsNullOrWhiteSpace(b.Notes) ? $"{b.Kind} boss" : $"{b.Kind} boss · {b.Notes}",
             Countdown = b.IsLive ? "LIVE" : Format(b.TimeUntil),
             When = $"{b.NextSpawn:dddd, MMM d · HH:mm}",
             Accent = Accent(b)

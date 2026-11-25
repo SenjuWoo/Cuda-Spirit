@@ -1,4 +1,4 @@
-# Build status — Cuda Spirit 2.4.1
+# Build status — Cuda Spirit 2.4.3
 
 ## Source status
 
@@ -10,7 +10,7 @@ The application is a Windows WPF project. `publish.bat` and the GitHub Actions w
 
 ## SDK behavior
 
-Local builds use any stable compatible .NET 8 or newer SDK already installed. The Nexus source-bootstrapper downloads the private .NET 8.0.423 SDK only when no compatible system or adjacent private SDK exists. A compiled self-contained Nexus release created by `BUILD_NEXUS_RELEASE.bat` requires no .NET runtime or SDK for end users.
+The projects target .NET 10. Local builds use any stable .NET 10 or newer SDK already installed (`global.json` pins 10.0.100 with `rollForward: latestMajor`); `publish.bat` and `tools/Build-NexusRelease.ps1` refuse older SDKs with a clear message. A compiled self-contained Nexus release created by `BUILD_NEXUS_RELEASE.bat` requires no .NET runtime or SDK for end users.
 
 
 ## V2.4.1 overlay hotfix

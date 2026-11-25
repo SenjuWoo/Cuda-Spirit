@@ -1,10 +1,10 @@
 @echo off
 REM ============================================================
-REM  Cuda Spirit 2.4.1 - verified Windows build and publish
+REM  Cuda Spirit 2.4.3 - verified Windows build and publish
 REM  Produces a self-contained single-file CudaSpirit.exe.
 REM ============================================================
 setlocal enableextensions enabledelayedexpansion
-title Cuda Spirit 2.4.1 - Build, Verify, and Publish
+title Cuda Spirit 2.4.3 - Build, Verify, and Publish
 
 set "ROOT=%~dp0"
 set "PROJECT=%ROOT%src\CudaSpirit.App\CudaSpirit.App.csproj"
@@ -21,7 +21,7 @@ set "DOTNET_NOLOGO=1"
 set "NUGET_XMLDOC_MODE=skip"
 
 echo ============================================================
-echo   CUDA SPIRIT 2.4.1 - VERIFIED BUILD AND PUBLISH
+echo   CUDA SPIRIT 2.4.3 - VERIFIED BUILD AND PUBLISH
 echo ============================================================
 
 where dotnet >nul 2>&1
@@ -126,7 +126,7 @@ for %%A in ("%EXE_PATH%") do set "EXE_SIZE=%%~zA"
 set /a EXE_MB=!EXE_SIZE! / 1048576 2>nul
 echo.
 echo ============================================================
-echo   SUCCESS - VERIFIED CUDA SPIRIT 2.4.1 BUILD
+echo   SUCCESS - VERIFIED CUDA SPIRIT 2.4.3 BUILD
 echo   %EXE_PATH% ^(~!EXE_MB! MB^)
 echo ============================================================
 echo.

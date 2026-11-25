@@ -70,14 +70,24 @@ def project_version(path: Path) -> str | None:
 
 app_version = project_version(ROOT / 'src/CudaSpirit.App/CudaSpirit.App.csproj')
 core_version = project_version(ROOT / 'src/CudaSpirit.Core/CudaSpirit.Core.csproj')
-if app_version != '2.4.2' or core_version != '2.4.2':
-    errors.append(f'Version mismatch: app={app_version}, core={core_version}, expected 2.4.2.')
+EXPECTED_VERSION = '2.4.3'
+if app_version != EXPECTED_VERSION or core_version != EXPECTED_VERSION:
+    errors.append(f'Version mismatch: app={app_version}, core={core_version}, expected {EXPECTED_VERSION}.')
+if (ROOT / 'VERSION.txt').read_text(encoding='utf-8').strip() != EXPECTED_VERSION:
+    errors.append(f'VERSION.txt does not say {EXPECTED_VERSION}.')
 http_fetch = (ROOT / 'src/CudaSpirit.Core/Services/LiveData/HttpFetch.cs').read_text(encoding='utf-8')
-if 'CudaSpirit/2.4.2' not in http_fetch:
-    errors.append('HTTP user-agent was not bumped to CudaSpirit/2.4.2.')
+if f'CudaSpirit/{EXPECTED_VERSION}' not in http_fetch:
+    errors.append(f'HTTP user-agent was not bumped to CudaSpirit/{EXPECTED_VERSION}.')
 
 main_xaml = (ROOT / 'src/CudaSpirit.App/MainWindow.xaml').read_text(encoding='utf-8')
-main_cs = (ROOT / 'src/CudaSpirit.App/MainWindow.xaml.cs').read_text(encoding='utf-8')
+# The sidebar shows the version to the player; 2.4.2 shipped still reading V2.4.1.
+if f'Text="V{EXPECTED_VERSION}  /  protected decisions"' not in main_xaml:
+    errors.append(f'Sidebar version caption does not read V{EXPECTED_VERSION}.')
+theme_xaml = (ROOT / 'src/CudaSpirit.App/Themes/BlackSpirit.xaml').read_text(encoding='utf-8')
+# Without the selector binding a DisplayMemberPath combo box shows the item's type name when closed.
+if 'ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"' not in theme_xaml:
+    errors.append('ComboBox template drops ItemTemplateSelector, so DisplayMemberPath is ignored in the selection box.')
+main_cs =(ROOT / 'src/CudaSpirit.App/MainWindow.xaml.cs').read_text(encoding='utf-8')
 nav_tags = set(re.findall(r'<RadioButton[^>]+Tag="([^"]+)"', main_xaml))
 view_tags = set(re.findall(r'"([a-z]+)"\s*=>\s*new\s+\w+View\(', main_cs))
 if nav_tags != view_tags:
@@ -87,7 +97,7 @@ for required in ('CommandPlaceholder', 'PageCrumbText', 'NavBrandDetails', 'Guid
         errors.append(f'Missing premium shell element: {required}.')
 if 'OnCommandTextChanged' not in main_cs:
     errors.append('Command palette placeholder handler is missing.')
-notes.append(f'Verified 2.4.2 release metadata and {len(nav_tags)} shell navigation destinations.')
+notes.append(f'Verified {EXPECTED_VERSION} release metadata and {len(nav_tags)} shell navigation destinations.')
 
 # Regression guard for the compiler error found by the first real Windows build.
 pearl_advisor = (ROOT / 'src/CudaSpirit.Core/Services/Guidance/PearlShopAdvisor.cs').read_text(encoding='utf-8')
@@ -187,7 +197,7 @@ sdk = global_json.get('sdk', {})
 if sdk.get('version') != '10.0.100' or sdk.get('rollForward') != 'latestMajor':
     errors.append('SDK compatibility regression: global.json must allow compatible installed .NET 10+ SDKs.')
 release_builder = ROOT / 'tools/Build-NexusRelease.ps1'
-if not release_builder.exists() or 'End users need no .NET runtime or SDK.' not in release_builder.read_text(encoding='utf-8'):
+if not release_builder.exists() or 'End users need no .NET runtime or SDK.' not in release_builder.read_text(encoding='utf-8') or '-ge 10' not in release_builder.read_text(encoding='utf-8'):
     errors.append('Self-contained Nexus release builder is missing or incomplete.')
 notes.append('Checked compatible-SDK policy and self-contained Nexus release builder.')
 

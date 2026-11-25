@@ -17,4 +17,4 @@ The workflow validates the source, restores pinned dependencies, builds with war
 - Keep source development in this repository.
 - Use the verified Actions artifact or the Nexus first-run builder to produce the public executable.
 - Never commit API keys, runtime settings, user databases, imported account data, `bin`, `obj`, `publish`, `app`, `.work`, `.buildtools`, or logs. The supplied `.gitignore` covers these paths.
-- No software license is asserted by this package. Add the license you intend before accepting outside contributions or publishing source terms.
+- The source is MIT licensed (`LICENSE`).

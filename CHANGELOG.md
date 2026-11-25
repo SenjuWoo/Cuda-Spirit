@@ -1,4 +1,13 @@
-# Unreleased
+# Cuda Spirit 2.4.3
+
+## Fixes
+
+- Farm Route Optimizer: the Start and Destination boxes showed `CudaSpirit.Core.Models.RouteNode` instead of the place name. The shared ComboBox template now honours `DisplayMemberPath`.
+- The sidebar caption read `V2.4.1` in 2.4.2; it now shows the running version, and the source validator checks it.
+- Bosses: entries without a note no longer end in a stray ` · `.
+- `BUILD_NEXUS_RELEASE.bat` accepted .NET 8 and 9 SDKs (which cannot build a .NET 10 project) and rejected .NET 11; it now takes any .NET 10 or newer SDK, matching `global.json`.
+- Build and Nexus docs no longer describe the retired .NET 8 bootstrapper; `REPOSITORY_SETUP.md` names the MIT licence the repo already carries.
+- Microsoft.Data.Sqlite 11.0.0.
 
 ## .NET 10
 

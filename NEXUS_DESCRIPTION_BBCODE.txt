@@ -1,4 +1,4 @@
-[center][size=6][b]CUDA SPIRIT 2.4.1[/b][/size]
+[center][size=6][b]CUDA SPIRIT 2.4.3[/b][/size]
 [size=4]OBSIDIAN UI · RECOVERY · SAFETY · LIVE DATA · DECISION COCKPIT[/size]
 A native Windows companion for Black Desert Online — built for the parts of BDO that punish uncertainty.[/center]
 
@@ -57,7 +57,7 @@ Cuda Spirit is a [b]companion and decision-support app[/b]. It is designed to st
 
 [heading]Installation & setup[/heading]
 [list=1]
-[*]Download and extract [code]Cuda-Spirit-2.4.1-Nexus-win-x64.zip[/code].[/*]
+[*]Download and extract [code]Cuda-Spirit-2.4.3-Nexus.zip[/code].[/*]
 [*]Run [code]CudaSpirit.exe[/code] (or [code]RUN CUDA SPIRIT.bat[/code]) from any folder [b]outside Program Files[/b].[/*]
 [*]No .NET runtime or SDK is required for this self-contained release. WebView2 Runtime is used for official-page fallback and the embedded browser (preinstalled on Windows 11; Microsoft Evergreen Runtime on most Windows 10 systems).[/*]
 [*]Open [b]Customize[/b]: set region, stage, focus, weekly hours, spending style, budget, and owned conveniences.[/*]

@@ -7,8 +7,9 @@ $Root = Split-Path -Parent $PSScriptRoot
 $Project = Join-Path $Root 'src\CudaSpirit.App\CudaSpirit.App.csproj'
 $Out = [IO.Path]::GetFullPath((Join-Path $Root $Output))
 $Dotnet = (Get-Command dotnet -ErrorAction Stop).Source
-$Compatible = @(& $Dotnet --list-sdks) | Where-Object { $_ -match '^(8\.|9\.|10\.)' } | Select-Object -First 1
-if (!$Compatible) { throw 'Install any stable .NET 8 or newer SDK to build the release.' }
+# The projects target net10.0; global.json rolls forward to any newer major SDK.
+$Compatible = @(& $Dotnet --list-sdks) | Where-Object { $_ -match '^(\d+)\.\d+\.\d+ ' -and [int]$Matches[1] -ge 10 } | Select-Object -First 1
+if (!$Compatible) { throw 'Install any stable .NET 10 or newer SDK to build the release.' }
 if (Test-Path $Out) { Remove-Item $Out -Recurse -Force }
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
 & $Dotnet restore (Join-Path $Root 'CudaSpirit.sln') --nologo

@@ -16,7 +16,7 @@ This is the major visual rework. The previous rounded, pill-heavy launcher appea
 
 ## Installation behavior
 
-The source-bootstrapper checks for a compatible installed stable .NET 8 or newer SDK first. It downloads a private 8.0.423 SDK only as fallback. The preferred public Nexus package is the self-contained EXE produced by `BUILD_NEXUS_RELEASE.bat`; users of that compiled package need no SDK or runtime.
+The public Nexus package is the self-contained EXE produced by `BUILD_NEXUS_RELEASE.bat`; users of that compiled package need no SDK or runtime. Building from source needs any stable .NET 10 or newer SDK (`global.json` rolls forward to newer majors).
 
 
 ## V2.4.1 overlay hotfix
